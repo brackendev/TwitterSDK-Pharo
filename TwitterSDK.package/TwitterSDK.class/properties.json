@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "brackendev 2/26/2018 01:53",
+	"super" : "Object",
+	"category" : "TwitterSDK",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"service",
+		"accessToken",
+		"userAccess"
+	],
+	"name" : "TwitterSDK",
+	"type" : "normal"
+}
