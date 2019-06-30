@@ -1,6 +1,5 @@
 TwitterSDK-Pharo
 ================
-[![](https://img.shields.io/badge/Maintained-No-red.svg)]()
 
 **[Pharo](http://pharo.org/) Smalltalk implementation to interact with the [Twitter API](https://dev.twitter.com/rest/public) (version 1.1).**
 
