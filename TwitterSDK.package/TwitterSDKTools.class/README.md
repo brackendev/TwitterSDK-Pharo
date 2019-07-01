@@ -1,4 +1,4 @@
-I am TwitterSDKTools, an object to interact with the Twitter API (version 1.1). More info at <https://brackendev.github.io/TwitterSDK-Pharo/>.
+I am TwitterSDKTools, an object to interact with the Twitter API (version 1.1).
 
 Example usage:
 
