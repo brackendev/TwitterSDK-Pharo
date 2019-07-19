@@ -17,7 +17,7 @@ TwitterSDK-Pharo
     ConfigurationOfZincHTTPComponents project latestVersion load: 'SSO'.
     ```
 
-2. Go to <https://apps.twitter.com/app/> to setup a consumer key, consumer secret, access token, and access token secret.
+2. Go to <https://apps.twitter.com/app/> to setup a consumer key, consumer secret, access token, and access token secret. Use this information for the `CONSUMER_KEY`, `CONSUMER_SECRET`, `ACCESS_TOKEN`, and `ACCESS_SECRET` below.
 
 ## Example Usage
 
@@ -46,8 +46,6 @@ text := TwitterSDKTools textForTweet: 763742584380456960.
 "Retrieve a Tweet's media URLs"
 mediaURLs := TwitterSDKTools mediaURLsForTweet: tweet.
 ```
-
-Note: Replace `CONSUMER_KEY`, `CONSUMER_SECRET`, `ACCESS_TOKEN`, and `ACCESS_SECRET` with the information you received.
 
 ## Author
 
