@@ -1,13 +1,13 @@
 TwitterSDK-Pharo
 ================
 
-**[Pharo](http://pharo.org/) Smalltalk implementation to interact with the [Twitter API](https://dev.twitter.com/rest/public) (version 1.1).**
+**[Pharo](https://www.pharo.org/) Smalltalk implementation to interact with the [Twitter API](https://dev.twitter.com/rest/public) (version 1.1).**
 
-* [Pharo 6.1](http://pharo.org/) reference platform.
+* [Pharo 6.1](https://www.pharo.org/) reference platform.
 
 ## Installation
 
-1. In a Pharo playground, evaluate:
+In a Playground, evaluate:
 
     ```smalltalk
     Metacello new 
@@ -17,9 +17,9 @@ TwitterSDK-Pharo
     ConfigurationOfZincHTTPComponents project latestVersion load: 'SSO'.
     ```
 
-2. Go to <https://apps.twitter.com/app/> to setup a consumer key, consumer secret, access token, and access token secret. (Use this information for the `CONSUMER_KEY`, `CONSUMER_SECRET`, `ACCESS_TOKEN`, and `ACCESS_SECRET` below.)
-
 ## Example Usage
+
+Go to <https://apps.twitter.com/app/> to setup a consumer key, consumer secret, access token, and access token secret. Use this information for the `CONSUMER_KEY`, `CONSUMER_SECRET`, `ACCESS_TOKEN`, and `ACCESS_SECRET` below.
 
 In a Pharo playground, evaluate:
 
