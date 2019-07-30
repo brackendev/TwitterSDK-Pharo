@@ -1,7 +1,7 @@
 TwitterSDK-Pharo
 ================
 
-**[Pharo](https://www.pharo.org/) Smalltalk implementation to interact with the [Twitter API](https://dev.twitter.com/rest/public) (version 1.1).**
+**Interact with the [Twitter API](https://dev.twitter.com/rest/public) (version 1.1) on Pharo.**
 
 * [Pharo 6.1](https://www.pharo.org/) reference platform.
 
