@@ -9,13 +9,13 @@ TwitterSDK-Pharo
 
 In a Playground, evaluate:
 
-    ```smalltalk
-    Metacello new 
-      repository: 'github://brackendev/TwitterSDK-Pharo';
-      baseline: 'TwitterSDK';
-      load.
-    ConfigurationOfZincHTTPComponents project latestVersion load: 'SSO'.
-    ```
+```smalltalk
+Metacello new 
+    repository: 'github://brackendev/TwitterSDK-Pharo';
+    baseline: 'TwitterSDK';
+    load.
+ConfigurationOfZincHTTPComponents project latestVersion load: 'SSO'.
+```
 
 ## Example Usage
 
