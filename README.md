@@ -11,9 +11,13 @@ In a Playground, evaluate:
 
 ```smalltalk
 Metacello new 
-    repository: 'github://brackendev/TwitterSDK-Pharo';
-    baseline: 'TwitterSDK';
-    load.
+  repository: 'github://brackendev/TwitterSDK-Pharo';
+  baseline: 'TwitterSDK';
+  onConflict: [ :ex | ex useIncoming ];
+  onUpgrade: [ :ex | ex useIncoming ];
+  onDowngrade: [ :ex | ex useLoaded ];
+  ignoreImage;
+  load.
 ConfigurationOfZincHTTPComponents project latestVersion load: 'SSO'.
 ```
 
