@@ -30,7 +30,7 @@ ConfigurationOfZincHTTPComponents project latestVersion load: 'SSO'.
 
 ## Example Usage
 
-Evaluate in a Pharo playground:
+Evaluate in a Playground:
 
 ```smalltalk
 twitterSDK := TwitterSDK createWithConsumerKey: CONSUMER_KEY consumerSecret: CONSUMER_SECRET accessToken: ACCESS_TOKEN accessTokenSecret: ACCESS_SECRET.
