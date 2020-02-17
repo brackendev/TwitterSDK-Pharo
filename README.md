@@ -1,13 +1,14 @@
 TwitterSDK-Pharo
 ================
 
-**Interact with the [Twitter API](https://dev.twitter.com/rest/public) (version 1.1) on Pharo.**
+**Interact with the [Twitter API](https://developer.twitter.com/en/docs) on Pharo.**
 
-* [Pharo 6.1](https://www.pharo.org/) reference platform.
+* [Pharo 8](https://www.pharo.org/) reference platform.
 
 ## Installation
 
-In a Playground, evaluate:
+1. Go to <https://developer.twitter.com/app/> to setup a consumer key, consumer secret, access token, and access token secret.
+2. Evaluate in a Playground:
 
 ```smalltalk
 Metacello new 
@@ -18,37 +19,46 @@ Metacello new
   onDowngrade: [ :ex | ex useLoaded ];
   ignoreImage;
   load.
+```
+
+3. Then evaluate:
+
+```smalltalk
 ConfigurationOfZincHTTPComponents project latestVersion load: 'SSO'.
 ```
 
 ## Example Usage
 
-Go to <https://apps.twitter.com/app/> to setup a consumer key, consumer secret, access token, and access token secret. Use this information for the `CONSUMER_KEY`, `CONSUMER_SECRET`, `ACCESS_TOKEN`, and `ACCESS_SECRET` below.
-
-In a Pharo playground, evaluate:
+Evaluate in a Pharo playground:
 
 ```smalltalk
 twitterSDK := TwitterSDK createWithConsumerKey: CONSUMER_KEY consumerSecret: CONSUMER_SECRET accessToken: ACCESS_TOKEN accessTokenSecret: ACCESS_SECRET.
 
-"Follow a user"
-twitterSDK friendshipsCreateWithScreenName: 'pharoproject' userID: nil follow: true.
+"Follow @brackendev"
+twitterSDK postPathSegment: 'friendships/create.json' parameters: (Dictionary newFrom: {'screen_name' -> 'brackendev'}).
 
 "Post a Tweet with an image"
-response := twitterSDK mediaUploadFile: 'test.jpg' additionalOwners: nil.
-mediaID := response at: 'media_id'.
-twitterSDK statusesUpdateWithStatus: 'Test' inReplyToStatusID: nil possiblySensitive: nil lat: nil long: nil placeID: nil displayCoordinates: nil trimUser: nil mediaIDs: mediaID enableDMCommands: nil failDMCommands: nil.
-
-"Post a Tweet with an image"
-TwitterSDKTools postTweetStatus: 'Test' image: 'test.jpg' twitterSDK: twitterSDK.
+"Note: The image resides in the Pharo image root directory"
+mediaUpload := TwitterSDKTools mediaUploadFile: 'test.jpg' additionalOwners: nil twitterSDK: twitterSDK.
+mediaID := (mediaUpload at: 'media_id') asString.
+twitterSDK postPathSegment: 'statuses/update.json' parameters: (Dictionary newFrom: {('status' -> 'Test tweet'). ('media_ids' -> mediaID)}).
+"...or"
+TwitterSDKTools postTweetStatus: 'Test tweet' image: 'test.jpg' twitterSDK: twitterSDK.
 
 "Retrieve a Tweet"
-tweet := TwitterSDKTools retrieveTweetForID: 763742584380456960 twitterSDK: twitterSDK.
+tweet := (twitterSDK getPathSegment: 'statuses/lookup.json' parameters: (Dictionary newFrom: {('id' -> '1178944243106242560')})) last.
+"...or"
+tweet := TwitterSDKTools retrieveTweetForID: '1178944243106242560' twitterSDK: twitterSDK.
 
 "Retrieve a Tweet's text"
-text := TwitterSDKTools textForTweet: 763742584380456960.
+text := TwitterSDKTools textForTweetID: '1178944243106242560' twitterSDK: twitterSDK.
 
 "Retrieve a Tweet's media URLs"
+tweet := TwitterSDKTools retrieveTweetForID: '1206776380844838914' twitterSDK: twitterSDK.
 mediaURLs := TwitterSDKTools mediaURLsForTweet: tweet.
+"...and inspect it"
+mediaURL := mediaURLs first.
+(ImageReadWriter formFromStream: (ZnEasy get: mediaURL) contents readStream) asMorph inspect.
 ```
 
 ## Author
