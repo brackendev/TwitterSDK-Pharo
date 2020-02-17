@@ -1,16 +1,7 @@
 public
-textForTweetID: anInteger twitterSDK: aTwitterSDK
-	"Example:
-twitter := TwitterSDK createWithConsumerKey: CONSUMER_KEY consumerSecret: CONSUMER_SECRET accessToken: ACCESS_TOKEN accessTokenSecret: ACCESS_TOKEN_SECRET.
-TwitterSDKTools textForTweetID: 763742584380456960 twitterSDK: twitter."
-
-	| response |
-	response := aTwitterSDK
-		statusesLookupWithIDs: anInteger
-		includeEntities: true
-		trimUser: true
-		map: nil
-		includeExtAltText: true.
-	(response isNil or: [ response isEmpty ])
+textForTweetID: aString twitterSDK: aTwitterSDK
+	| tweet |
+	tweet := self retrieveTweetForID: aString twitterSDK: aTwitterSDK.
+	(tweet isNil or: [ tweet isEmpty ])
 		ifTrue: [ ^ nil ]
-		ifFalse: [ ^ self textForTweet: response last ]
+		ifFalse: [ ^ self textForTweet: tweet ]

@@ -1,20 +1,18 @@
 public
 postTweetStatus: aString image: aFileName twitterSDK: aTwitterSDK
-"Example:
-TODO"
 	| response mediaID |
 	aFileName
-		ifNotNil: [ response := aTwitterSDK mediaUploadFile: aFileName additionalOwners: nil.
-			mediaID := response at: 'media_id' ].
+		ifNotNil:
+			[ response := self
+				mediaUploadFile: aFileName
+				additionalOwners: nil
+				twitterSDK: aTwitterSDK.
+			mediaID := (response at: 'media_id') asString
+			].
 	^ aTwitterSDK
-		statusesUpdateWithStatus: aString
-		inReplyToStatusID: nil
-		possiblySensitive: nil
-		lat: nil
-		long: nil
-		placeID: nil
-		displayCoordinates: nil
-		trimUser: nil
-		mediaIDs: mediaID
-		enableDMCommands: nil
-		failDMCommands: nil
+		postPathSegment: 'statuses/update.json'
+		parameters:
+			(Dictionary
+				newFrom:
+					{('status' -> aString).
+					('media_ids' -> mediaID)})
