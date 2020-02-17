@@ -8,7 +8,8 @@ TwitterSDK-Pharo
 ## Installation
 
 1. Go to <https://developer.twitter.com/app/> to setup a consumer key, consumer secret, access token, and access token secret.
-2. Evaluate in a Playground:
+2. Install and run [Pharo](https://www.pharo.org/).
+3. Evaluate in a Playground:
 
 ```smalltalk
 Metacello new 
@@ -21,7 +22,7 @@ Metacello new
   load.
 ```
 
-3. Then evaluate:
+4. Then evaluate:
 
 ```smalltalk
 ConfigurationOfZincHTTPComponents project latestVersion load: 'SSO'.
