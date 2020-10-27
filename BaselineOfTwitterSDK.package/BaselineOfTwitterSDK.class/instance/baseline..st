@@ -9,4 +9,5 @@ baseline: spec
 				with: [ spec
 						className: #ConfigurationOfZincHTTPComponents;
 						versionString: #stable;
+						loads: #('SSO');
 						repository: 'http://mc.stfx.eu/ZincHTTPComponents' ] ]
