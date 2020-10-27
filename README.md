@@ -68,6 +68,7 @@ text := TwitterSDKTools textForTweetID: '1178944243106242560' twitterSDK: twitte
 "Retrieve a Tweet's media URLs"
 tweet := TwitterSDKTools retrieveTweetForID: '1206776380844838914' twitterSDK: twitterSDK.
 mediaURLs := TwitterSDKTools mediaURLsForTweet: tweet.
+
 "...and inspect it"
 mediaURL := mediaURLs first.
 (ImageReadWriter formFromStream: (ZnEasy get: mediaURL) contents readStream) asMorph inspect.
