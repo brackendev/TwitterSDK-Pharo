@@ -38,7 +38,8 @@ twitterSDK postPathSegment: 'friendships/create.json' parameters: parameters.
 "Note: The image resides in the Pharo image root directory"
 mediaUpload := TwitterSDKTools mediaUploadFile: 'test.jpg' additionalOwners: nil twitterSDK: twitterSDK.
 mediaID := (mediaUpload at: 'media_id') asString.
-twitterSDK postPathSegment: 'statuses/update.json' parameters: (Dictionary newFrom: {('status' -> 'Test tweet'). ('media_ids' -> mediaID)}).
+parameters := Dictionary newFrom: {('status' -> 'Test tweet'). ('media_ids' -> mediaID)}.
+twitterSDK postPathSegment: 'statuses/update.json' parameters: parameters.
 
 "...or"
 TwitterSDKTools postTweetStatus: 'Test tweet' image: 'test.jpg' twitterSDK: twitterSDK.
