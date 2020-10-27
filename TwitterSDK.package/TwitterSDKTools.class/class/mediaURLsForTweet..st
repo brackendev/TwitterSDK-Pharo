@@ -8,6 +8,6 @@ mediaURLsForTweet: aTweet
 	(media isNil or: [ media isEmpty ])
 		ifTrue: [ ^ OrderedCollection new ].
 	urls := self urlsForTweetMedia: media.
-	(urls isNil or: [ urls isEmpty ])
-		ifTrue: [ ^ OrderedCollection new ]
-		ifFalse: [ ^ urls ]
+	^ (urls isNil or: [ urls isEmpty ])
+		ifTrue: [ OrderedCollection new ]
+		ifFalse: [ urls ]
