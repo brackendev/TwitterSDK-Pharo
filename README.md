@@ -9,7 +9,7 @@ TwitterSDK-Pharo
 
 1. Go to <https://developer.twitter.com/app/> to setup a consumer key, consumer secret, access token, and access token secret.
 2. Install and run [Pharo](https://www.pharo.org/).
-3. Evaluate in a Playground:
+3. In a Playground, _Do it_:
 
 ```smalltalk
 Metacello new 
@@ -22,7 +22,7 @@ Metacello new
   load.
 ```
 
-4. Then evaluate:
+4. Then _Do it_:
 
 ```smalltalk
 ConfigurationOfZincHTTPComponents project latestVersion load: 'SSO'.
@@ -30,7 +30,7 @@ ConfigurationOfZincHTTPComponents project latestVersion load: 'SSO'.
 
 ## Example Usage
 
-Evaluate in a Playground:
+In a Playground, _Do it_:
 
 ```smalltalk
 twitterSDK := TwitterSDK createWithConsumerKey: CONSUMER_KEY consumerSecret: CONSUMER_SECRET accessToken: ACCESS_TOKEN accessTokenSecret: ACCESS_SECRET.
