@@ -21,38 +21,49 @@ Metacello new
   load.
 ```
 
-3. Then _Do it_:
-
-```smalltalk
-ConfigurationOfZincHTTPComponents project latestVersion load: 'SSO'.
-```
-
 ## Example Usage
-
-In a Playground, _Do it_:
 
 ```smalltalk
 twitterSDK := TwitterSDK createWithConsumerKey: CONSUMER_KEY consumerSecret: CONSUMER_SECRET accessToken: ACCESS_TOKEN accessTokenSecret: ACCESS_SECRET.
+```
 
+```smalltalk
 "Follow @brackendev"
-twitterSDK postPathSegment: 'friendships/create.json' parameters: (Dictionary newFrom: {'screen_name' -> 'brackendev'}).
+parameters := Dictionary newFrom: {'screen_name' -> 'brackendev'}.
+twitterSDK postPathSegment: 'friendships/create.json' parameters: parameters.
+```
 
+```smalltalk
 "Post a Tweet with an image"
 "Note: The image resides in the Pharo image root directory"
 mediaUpload := TwitterSDKTools mediaUploadFile: 'test.jpg' additionalOwners: nil twitterSDK: twitterSDK.
 mediaID := (mediaUpload at: 'media_id') asString.
 twitterSDK postPathSegment: 'statuses/update.json' parameters: (Dictionary newFrom: {('status' -> 'Test tweet'). ('media_ids' -> mediaID)}).
+
 "...or"
 TwitterSDKTools postTweetStatus: 'Test tweet' image: 'test.jpg' twitterSDK: twitterSDK.
+```
 
+```smalltalk
 "Retrieve a Tweet"
-tweet := (twitterSDK getPathSegment: 'statuses/lookup.json' parameters: (Dictionary newFrom: {('id' -> '1178944243106242560')})) last.
+parameters := Dictionary newFrom: {('id' -> '1178944243106242560')}.
+tweet := (twitterSDK getPathSegment: 'statuses/lookup.json' parameters: parameters) last.
+
 "...or"
 tweet := TwitterSDKTools retrieveTweetForID: '1178944243106242560' twitterSDK: twitterSDK.
+```
 
+```smalltalk
 "Retrieve a Tweet's text"
-text := TwitterSDKTools textForTweetID: '1178944243106242560' twitterSDK: twitterSDK.
+parameters := Dictionary newFrom: {('id' -> '1178944243106242560')}.
+tweet := (twitterSDK getPathSegment: 'statuses/lookup.json' parameters: parameters) last.
+text := tweet at: 'text'.
 
+"...or"
+text := TwitterSDKTools textForTweetID: '1178944243106242560' twitterSDK: twitterSDK.
+```
+
+```smalltalk
 "Retrieve a Tweet's media URLs"
 tweet := TwitterSDKTools retrieveTweetForID: '1206776380844838914' twitterSDK: twitterSDK.
 mediaURLs := TwitterSDKTools mediaURLsForTweet: tweet.
