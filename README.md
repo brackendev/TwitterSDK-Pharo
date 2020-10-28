@@ -74,6 +74,10 @@ mediaURL := mediaURLs first.
 (ImageReadWriter formFromStream: (ZnEasy get: mediaURL) contents readStream) asMorph inspect.
 ```
 
+## TODO
+
+- [ ] Support Pharo 9 (when stable)
+
 ## Author
 
 [brackendev](https://www.github.com/brackendev)
