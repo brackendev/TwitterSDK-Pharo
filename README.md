@@ -12,7 +12,7 @@ TwitterSDK-Pharo
 
 ```smalltalk
 Metacello new 
-  repository: 'github://brackendev/TwitterSDK-Pharo';
+  repository: 'github://brackendev/TwitterSDK-Pharo/src';
   baseline: 'TwitterSDK';
   onConflict: [ :ex | ex useIncoming ];
   onUpgrade: [ :ex | ex useIncoming ];
