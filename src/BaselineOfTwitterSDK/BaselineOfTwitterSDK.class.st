@@ -1,5 +1,11 @@
-baselines
-baseline: spec
+Class {
+	#name : #BaselineOfTwitterSDK,
+	#superclass : #BaselineOf,
+	#category : 'BaselineOfTwitterSDK'
+}
+
+{ #category : #baselines }
+BaselineOfTwitterSDK >> baseline: spec [
 	<baseline>
 	spec
 		for: #common
@@ -11,3 +17,5 @@ baseline: spec
 						versionString: #stable;
 						loads: #('SSO');
 						repository: 'http://mc.stfx.eu/ZincHTTPComponents' ] ]
+
+]
