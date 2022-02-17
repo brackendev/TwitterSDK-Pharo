@@ -11,9 +11,7 @@ BaselineOfTwitterSDK >> baseline: spec [
 		for: #common
 		do: [ spec package: 'TwitterSDK'.
 			spec
-			baseline: 'SSO-OAuth1'
-			with: [ spec
-				loads: #('SSO-OAuth1');
-				repository: 'github://svenvc/zinc/repository' ] ].
+			baseline: 'ZincHTTPComponents'
+			with: [ spec repository: 'github://svenvc/zinc/repository' ].
 
 ]
