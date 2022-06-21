@@ -7,7 +7,7 @@ TwitterSDK-Pharo
 
 ## TODO
 
-- [ ] Support latest Pharo release
+- [ ] Support the latest Pharo release.
 
 ## Installation
 
