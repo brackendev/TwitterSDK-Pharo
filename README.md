@@ -11,7 +11,7 @@ TwitterSDK-Pharo
 
 ## Installation
 
-1. Go to <https://developer.twitter.com/app/> to setup a consumer key, consumer secret, access token, and access token secret.
+1. Go to <https://developer.twitter.com/app/> to set up a consumer key, consumer secret, access token, and access token secret.
 2. In a Playground, _Do it_:
 
 ```smalltalk
