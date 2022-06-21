@@ -5,6 +5,10 @@ TwitterSDK-Pharo
 
 * [Pharo 8](https://www.pharo.org/) reference platform.
 
+## TODO
+
+- [ ] Support latest Pharo release
+
 ## Installation
 
 1. Go to <https://developer.twitter.com/app/> to setup a consumer key, consumer secret, access token, and access token secret.
@@ -69,10 +73,6 @@ mediaURLs := TwitterSDKTools mediaURLsForTweet: tweet.
 mediaURL := mediaURLs first.
 (ImageReadWriter formFromStream: (ZnEasy get: mediaURL) contents readStream) asMorph inspect.
 ```
-
-## TODO
-
-- [ ] Support Pharo 9 (when stable)
 
 ## Author
 
