@@ -3,11 +3,7 @@ TwitterSDK-Pharo
 
 **Interact with the [Twitter API v1.1](https://developer.twitter.com/en/docs/twitter-api/v1) on Pharo.**
 
-* [Pharo 8](https://www.pharo.org/) reference platform.
-
-## TODO
-
-- [ ] Support the latest Pharo release.
+* [Pharo 10](https://www.pharo.org/) reference platform.
 
 ## Installation
 
