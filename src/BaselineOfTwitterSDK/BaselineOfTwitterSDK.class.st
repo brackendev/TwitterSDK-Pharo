@@ -13,7 +13,9 @@ BaselineOfTwitterSDK >> baseline: spec [
 			spec
 				project: 'ZincHTTPComponents'
 				with: [ spec
-						loads: #('SSO-OAuth1');
-						repository: 'github://svenvc/zinc/repository' ] ]
+						className: #ConfigurationOfZincHTTPComponents;
+						versionString: #stable;
+						loads: #('SSO');
+						repository: 'http://mc.stfx.eu/ZincHTTPComponents' ] ]
 
 ]
