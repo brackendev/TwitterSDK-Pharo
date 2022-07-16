@@ -11,8 +11,7 @@ BaselineOfTwitterSDK >> baseline: spec [
 		for: #common
 		do: [ spec package: 'TwitterSDK'.
 			baseline: 'ZincHTTPComponents'
-          with: [ 
-              spec
+          spec
                 className: 'BaselineOfZincHTTPComponents';
                 loads: #('Core' 'REST' 'SSO' 'WebSocket');
                 repository: 'github://GsDevKit/zinc:gs_master/repository' ] ]
