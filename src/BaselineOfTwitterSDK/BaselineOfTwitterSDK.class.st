@@ -16,6 +16,6 @@ BaselineOfTwitterSDK >> baseline: spec [
 						className: #ConfigurationOfZincHTTPComponents;
 						versionString: #stable;
 						loads: #('SSO');
-						repository: 'http://mc.stfx.eu/ZincHTTPComponents' ] ]
+						repository: 'github://svenvc/zinc:master/repository' ] ]
 
 ]
