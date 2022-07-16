@@ -20,7 +20,7 @@ Metacello new
 ## Example Usage
 
 ```smalltalk
-twitterSDK := TwitterSDK createWithConsumerKey: CONSUMER_KEY consumerSecret: CONSUMER_SECRET accessToken: ACCESS_TOKEN accessTokenSecret: ACCESS_SECRET.
+twitterSDK := TwitterSDK createWithAPIKey: API_KEY apiKeySecret: API_KEY_SECRET accessToken: ACCESS_TOKEN accessTokenSecret: ACCESS_SECRET.
 ```
 
 ```smalltalk
