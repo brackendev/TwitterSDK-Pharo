@@ -19,15 +19,15 @@ Class {
 }
 
 { #category : #public }
-TwitterSDK class >> createWithConsumerKey: consumerKey consumerSecret: consumerSecret accessToken: aToken accessTokenSecret: aTokenSecret [
+TwitterSDK class >> createWithAPIKey: apiKey apiKeySecret: apiKeySecret accessToken: aToken accessTokenSecret: aTokenSecret [
 	"Do this before anything else"
 
 	"Setup your app at https://apps.twitter.com/app/"
 
 	| consumerData accessTokenDict userAccess service accessToken |
 	consumerData := ZnOAuth1ConsumerData newForTwitterAuthentication.
-	consumerData consumer: consumerKey.
-	consumerData consumerSecret: consumerSecret.
+	consumerData consumer: apiKey.
+	consumerData consumerSecret: apiKeySecret.
 	service := ZnOAuth1Service new.
 	service providerAccount: consumerData.
 	accessTokenDict := Dictionary new.
