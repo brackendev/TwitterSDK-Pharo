@@ -5,7 +5,7 @@ TwitterSDK-Pharo
 
 * [Pharo 10](https://www.pharo.org/) reference platform.
 
-## Installation and Setup
+## Installation
 
 1. If you do not have a Twitter app set up:
     1. Sign in to Twitter and go to <https://developer.twitter.com/> to create an app.
