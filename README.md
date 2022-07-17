@@ -7,8 +7,9 @@ TwitterSDK-Pharo
 
 ## Installation and Setup
 
-1. Sign in to Twitter and go to <https://developer.twitter.com/> to create an app.
-2. Set up the app API key, API key secret, access token, and access token secret.
+1. If you do not have a Twitter app set up:
+    1. Sign in to Twitter and go to <https://developer.twitter.com/> to create an app.
+    2. Retrieve the app API key, API key secret, access token, and access token secret.
 3. Load this project in Pharo. In a Playground, _Do it_:
 
 ```smalltalk
