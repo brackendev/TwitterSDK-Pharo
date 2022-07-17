@@ -5,10 +5,11 @@ TwitterSDK-Pharo
 
 * [Pharo 10](https://www.pharo.org/) reference platform.
 
-## Installation
+## Installation and Setup
 
-1. Go to <https://developer.twitter.com/app/> to set up a consumer key, consumer secret, access token, and access token secret.
-2. In a Playground, _Do it_:
+1. Sign in to Twitter and go to <https://developer.twitter.com/> to create an app.
+2. Set up the app API key, API key secret, access token, and access token secret.
+3. Load this project in Pharo. In a Playground, _Do it_:
 
 ```smalltalk
 Metacello new 
